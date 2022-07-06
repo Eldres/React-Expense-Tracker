@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ onSaveExpenseData }) => {
   // const [enteredTitle, setEnteredTitle] = useState('')
   // const [enteredAmount, setEnteredAmount] = useState('')
   // const [enteredDate, setEnteredDate] = useState('')
@@ -61,6 +61,8 @@ const ExpenseForm = () => {
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate)
     }
+
+    onSaveExpenseData(expenseData)
     // reset data to allow for new inputs
     setUserInput({
       enteredTitle: '',
